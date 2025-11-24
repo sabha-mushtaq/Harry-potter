@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Potter World Explorer — Magical Experience</title>
+  <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;700&family=Roboto:wght@300;400;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <!-- Floating particles for magical effect -->
+    <div class="particles" id="particles"></div>
+    
+    <!-- HERO -->
+    <header class="hero">
+      <div class="hero-bg"></div>
+      <img class="hero-img" src="images/hogwarts-crest.png" alt="Hogwarts banner">
+      <div class="hero-overlay">
+        <h1>Potter World Explorer</h1>
+        <p class="subtitle">Discover characters, students, staff, houses and spells — all in one magical place.</p>
+      </div>
+    </header>
+
+    <main class="container">
+      <!-- TABS -->
+      <nav class="tabs" role="tablist">
+        <button class="tab active" data-tab="characters" role="tab">
+          <span class="tab-icon">👤</span>
+          Characters
+        </button>
+        <button class="tab" data-tab="students" role="tab">
+          <span class="tab-icon">🎓</span>
+          Students
+        </button>
+        <button class="tab" data-tab="staff" role="tab">
+          <span class="tab-icon">🧙</span>
+          Staff
+        </button>
+        <button class="tab" data-tab="houses" role="tab">
+          <span class="tab-icon">🏰</span>
+          Houses
+        </button>
+        <button class="tab" data-tab="spells" role="tab">
+          <span class="tab-icon">✨</span>
+          Spells
+        </button>
+      </nav>
+
+      <!-- SEARCH + HOUSE FILTER -->
+      <section class="controls">
+        <div class="search-container">
+          <input id="searchInput" placeholder="Search characters... (e.g. Harry)">
+          <span class="search-icon">🔍</span>
+        </div>
+        <div id="housesRow" class="houses-row" aria-hidden="true">
+          <button data-house="gryffindor" class="house-btn">
+            <span class="house-icon gryffindor">🦁</span>
+            Gryffindor
+          </button>
+          <button data-house="slytherin" class="house-btn">
+            <span class="house-icon slytherin">🐍</span>
+            Slytherin
+          </button>
+          <button data-house="ravenclaw" class="house-btn">
+            <span class="house-icon ravenclaw">🦅</span>
+            Ravenclaw
+          </button>
+          <button data-house="hufflepuff" class="house-btn">
+            <span class="house-icon hufflepuff">🦡</span>
+            Hufflepuff
+          </button>
+          <button data-house="all" class="house-btn active">
+            <span class="house-icon all">🏰</span>
+            All Houses
+          </button>
+        </div>
+      </section>
+
+      <!-- CONTENT AREA -->
+      <section id="content" class="content">
+        <div class="loader" id="loader">
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <div class="sparkle"></div>
+          <p>Loading magical content...</p>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal" aria-hidden="true">
+    <div class="modal-card">
+      <button id="modalClose" class="modal-close" aria-label="Close">✕</button>
+      <div id="modalBody"></div>
+    </div>
+  </div>
+
+  <footer class="footer">
+    <p>Built with ❤️ using <a href="https://hp-api.onrender.com" target="_blank" rel="noopener">HP-API</a></p>
+    <p class="magical-text">Mischief Managed!</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
